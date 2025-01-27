@@ -1,0 +1,6 @@
+Django==3.2.23
+requests
+numpy<1.27
+pandas<2.1
+geopy
+flask-cors
