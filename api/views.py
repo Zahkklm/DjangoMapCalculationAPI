@@ -8,7 +8,6 @@ from scipy.spatial import KDTree
 from geopy.distance import great_circle
 from django.http import JsonResponse
 from django.views import View
-import folium
 from visualize_map import plot_route_on_map
 from dotenv import load_dotenv
 import os
