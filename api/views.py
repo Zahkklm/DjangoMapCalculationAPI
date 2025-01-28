@@ -154,7 +154,7 @@ class RouteView(View):
                     
                     logger.debug(f"Distance from route: {distance_from_route} miles")
                     print(f"Distance from route: {distance_from_route} miles")
-                    if distance_from_route >= 0:  # Max 100 miles off-route
+                    if distance_from_route > 0:
                         candidates.append({
                             **station,
                             'mile_position': route_point['mile_position'],
@@ -176,7 +176,7 @@ class RouteView(View):
                 'distance_from_start': round(cheapest['mile_position'], 1)
             })
             
-            current_pos = cheapest['mile_position'] + (self.MAX_RANGE - 10)  # Conservative buffer
+            current_pos = cheapest['mile_position'] + (self.MAX_RANGE)  # Conservative buffer
 
         return stops, total_cost
 
@@ -188,7 +188,7 @@ class RouteView(View):
         
         for coord in coordinates:
             if prev:
-                segment = great_circle(prev, coord).miles
+                segment = great_circle(prev, coord).miles 
                 cumulative_miles += segment
                 
             points.append({
