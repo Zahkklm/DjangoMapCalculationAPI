@@ -32,7 +32,6 @@ This project is a Django-based API that calculates optimal fueling locations alo
 ```
 GEOAPIFY_API_KEY=your_geoapify_api_key
 ORS_API_KEY=your_openrouteservice_api_key
-MAPBOX_TOKEN=your_mapbox_token
 ```
 
 4. Run database migrations:
