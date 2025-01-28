@@ -22,7 +22,8 @@ This project is a Django-based API that calculates optimal fueling locations alo
 
    ```sh
    git clone <repository-url>
-   cd django-api```
+   cd django-api
+   ```
 
 2. Install the required packages:
    ```pip install -r requirements.txt```
