@@ -1,14 +1,12 @@
+# filepath: /c:/Users/zagor/Documents/django-api/django_api/settings.py
 import os
 from pathlib import Path
-from django.core.management.utils import get_random_secret_key
-
-print(get_random_secret_key())
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "m@nxhe1+rywk)_v4!5))co*=()s7pjdox4vl()vr#ea8thvnv2"
-
-ALLOWED_HOSTS = ['*']  # Allow all hosts for development. Change this in production.
+SECRET_KEY = 'your-secret-key'
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -79,3 +77,22 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'errors.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
