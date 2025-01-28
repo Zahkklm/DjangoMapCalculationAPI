@@ -4,3 +4,6 @@ numpy<1.27
 pandas<2.1
 geopy
 flask-cors
+python-dotenv
+folium
+scipy
